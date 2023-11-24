@@ -1,0 +1,16 @@
+<body>
+    <h1>My mother's childrens</h1>
+    <ul id="students"></ul>
+    <script>
+        var ul=document.getElementById('students');
+        fetch('https://training-x8ke.onrender.com/sibling')
+        .then(response=>response.json())
+        .then(json=>{
+            json.forEach(s => {
+                let li=document.createElement('li');
+                li.innerHTML=s.name;
+                ul.appendChild(li);                
+            });
+        })
+    </script>
+    </body>
